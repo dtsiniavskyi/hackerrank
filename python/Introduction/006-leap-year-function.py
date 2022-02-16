@@ -12,3 +12,26 @@
 # Given a year, determine whether it is a leap year. If it is a leap year, return the Boolean True, otherwise return False.
 # Note that the code stub provided reads from STDIN and passes arguments to the is_leap function. It is only necessary to complete the is_leap function.
 
+from operator import is_
+
+
+def is_leap(year):
+    isLeap = False
+    
+    if year % 4 == 0:
+        isLeap = True
+
+        if year % 100 == 0:
+            isLeap = False
+
+            if year % 400 == 0:
+                isLeap = True
+    
+    return isLeap
+
+# year = int(input())
+
+#years = [2000, 2004, 2400, 1800, 1900, 2100]
+years = [2400]
+for y in years:
+    print(is_leap(y))
